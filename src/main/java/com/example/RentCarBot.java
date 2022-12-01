@@ -21,5 +21,7 @@ public class RentCarBot extends TelegramLongPollingBot {
 
         System.out.println(update.getMessage().getText());
 
+        System.out.println("salomlar , buni hozir qo'shdim");
+
     }
 }
