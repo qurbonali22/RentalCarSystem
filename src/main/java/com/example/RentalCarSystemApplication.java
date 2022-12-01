@@ -13,13 +13,13 @@ public class RentalCarSystemApplication {
 
 		SpringApplication.run(RentalCarSystemApplication.class, args);
 
-		try {
-			TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
-			telegramBotsApi.registerBot(new RentCarBot());
-		} catch (TelegramApiException e) {
-			System.out.println("xato");
-			e.printStackTrace();
-		}
+//		try {
+//			TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
+//			telegramBotsApi.registerBot(new RentCarBot());
+//		} catch (TelegramApiException e) {
+//			System.out.println("xato");
+//			e.printStackTrace();
+//		}
 
 
 	}
