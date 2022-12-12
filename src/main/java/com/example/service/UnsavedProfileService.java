@@ -24,7 +24,7 @@ public class UnsavedProfileService {
     public Boolean updatePhone(String phone, Long tgId){
 
         UnsavedProfileEntity entity = getByTgId(tgId);
-        entity.setName(phone);
+        entity.setPhone(phone);
         entity.setStep(ProfileStep.NAME);
         unsavedProfileRepository.save(entity);
         return true;
@@ -50,7 +50,7 @@ public class UnsavedProfileService {
     public Boolean updateSurname(String surname, Long tgId){
 
         UnsavedProfileEntity entity = getByTgId(tgId);
-        entity.setName(surname);
+        entity.setSurname(surname);
         entity.setStep(ProfileStep.DEFAULT);
         unsavedProfileRepository.save(entity);
         return true;
