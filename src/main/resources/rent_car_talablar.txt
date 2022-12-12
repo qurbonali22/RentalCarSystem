@@ -1,0 +1,92 @@
+Rental car system 
+
+ profile(id, tgId, phone, name, surname, role, created_date)
+role -> admin, user; 
+
+car(id, detail, price, status, created_date)
+status - > busy, not_busy
+
+profile_car(id, profile_id, car_id, created_date) 
+// Bitta car bitta profilga tegishli.
+//Bitta profile ga bir nechta car tegishli bo'ladi. 
+
+order(id, profile_id, car_id, status, started_date, finished_date, created_date;)
+status -> taken, given;
+
+
+Step -> NAME, SURNAME, PHONE, CAR_DETAIL, CAR_PRICE, DEFAULT;
+
+
+User qila oladi : 
+1. Avtomobil qo'shish;
+2. Avtomobil tanlaydi;
+3. Change status -> avtomobil statusini almashtiradi;
+4. Buyurtmalar tarixini ko'radi;
+
+harakatlar : USER UCHUN
+
+#############################
+
+ start bosilsa - > 
+1 . Registed : main menu;
+2 . NOT_REGISTED : REGISTRATION;
+
+#############################
+
+ REGISTRATION - > 
+1 . SHARE_CONTACT or ENTER PHONE NUMBER;
+2 . ENTER NAME;
+3 . ENTER SURNAME; ROLE DEFAULT - > USER
+
+#############################
+
+ MAIN_MENU - > 
+1 . ADD CAR
+2 . CHOOSE CAR
+3 . CHANGE CAR STATUS
+4 . ORDERS HISTORY
+
+#############################
+
+ ADD CAR - >
+1 . ENTER CAR'S DETAIL; 
+2 . ENTER PRICE; STATUS DEFAULT -> NOT_BUSY;
+
+ * LINK CAR AND PROFILE TO profile_car TABLE;
+
+#############################
+
+ CHOOSE CAR - >
+1 . SHOW  ( STATUS = NOT_BUSY) CARS AS BUTTONS;  CAR - > DETAIL , PRICE;
+
+ PROFILE PRESS A BUTTON    // PRESS  - > BOSGANDA //
+
+2. Enter started_date;
+3 . Enter finished_date;
+
+ADD TO ORDERS TABLE THIS ORDER;
+CHANGE CAR STATUS TO  'BUSY'; 
+
+
+#############################
+
+CHANGE CAR STATUS  - > 
+
+1 . SHOW PROFILE CAR'S  AS BUTTON;   CAR - > DETAIL , PRICE;
+ PROFILE PRESS A BUTTON AND    // PRESS  - > BOSGANDA //
+CHANGE PROFILE CAR'S STATUS BUSY IF STATUS = NOT_BUSY , NOT_BUSY IF STATUS = BUSY;
+
+#############################
+
+ORDERS HISTORY  - > 
+SHOW PROFILE'S ORDERS , STATUS = ( TAKEN OR GIVEN ) ;  ORDER  - > CAR_DETAIL, STATUS,
+ 					           STARTED_DATE, FINISHED_DATE, CREATED_DATE;
+
+#############################
+
+
+
+
+
+ 
+
