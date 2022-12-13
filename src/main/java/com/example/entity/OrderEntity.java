@@ -2,10 +2,13 @@ package com.example.entity;
 
 import com.example.enums.OrderStatus;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-
+@Getter
+@Setter
 @Entity
 @Table(name = "orders")
 public class OrderEntity {
@@ -36,4 +39,14 @@ public class OrderEntity {
     @Column(name = "created_date")
     private LocalDateTime createdDate;
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                " startedDate=" + startedDate +
+                ", finishedDate=" + finishedDate +
+                ", car=" + car +
+                ", status=" + status +
+                ", createdDate=" + createdDate +
+                '}';
+    }
 }

@@ -59,7 +59,7 @@ public class UnsavedProfileService {
     public Boolean updateStep(ProfileStep step, Long tgId){
 
         UnsavedProfileEntity entity = getByTgId(tgId);
-        entity.setStep(ProfileStep.CAR_DETAIL);
+        entity.setStep(step);
         unsavedProfileRepository.save(entity);
         return true;
 
@@ -70,6 +70,30 @@ public class UnsavedProfileService {
         Optional<UnsavedProfileEntity> optional = unsavedProfileRepository.findByTgId(tgId);
 
         return optional.map(UnsavedProfileEntity::getStep).orElse(null);
+    }
+
+    public Boolean updateCarId(Long tgId, Integer carId){
+
+        UnsavedProfileEntity entity = getByTgId(tgId);
+        entity.setCarId(carId);
+        unsavedProfileRepository.save(entity);
+        return true;
+    }
+
+    public Integer getCarId(Long tgId){
+        return getByTgId(tgId).getCarId();
+    }
+
+    public Boolean updateOrderId(Long tgId, Integer orderId){
+
+        UnsavedProfileEntity entity = getByTgId(tgId);
+        entity.setOrderId(orderId);
+        unsavedProfileRepository.save(entity);
+        return true;
+    }
+
+    public Integer getOrderId(Long tgId){
+        return getByTgId(tgId).getOrderId();
     }
 
 }

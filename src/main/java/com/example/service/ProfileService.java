@@ -22,9 +22,7 @@ public class ProfileService {
 
     public Boolean getByTgId(Long tgId){
 
-        Optional<ProfileEntity> optional = profileRepository.findByTgId(tgId);
-
-        return optional.isPresent();
+        return get(tgId) != null;
     }
 
     public void create(Long tgId){
@@ -40,5 +38,13 @@ public class ProfileService {
         entity.setCreatedDate(LocalDateTime.now());
 
         profileRepository.save(entity);
+    }
+
+    public ProfileEntity get(Long tgId){
+
+        Optional<ProfileEntity> optional = profileRepository.findByTgId(tgId);
+
+        return optional.isEmpty()?null:optional.get();
+
     }
 }

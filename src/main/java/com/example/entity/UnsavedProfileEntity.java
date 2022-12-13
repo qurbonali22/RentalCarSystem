@@ -31,4 +31,11 @@ public class UnsavedProfileEntity {
     @Enumerated(EnumType.STRING)
     private ProfileStep step;
 
+    @Column(name = "car_id")
+    private Integer carId;
+
+    @Column(name = "orders_id")
+    private Integer orderId;
+
+
 }

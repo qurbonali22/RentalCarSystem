@@ -23,6 +23,10 @@ public class CarEntity {
     @Column
     private Long price;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "profile_id")
+    private ProfileEntity profile;
+
     @Column
     @Enumerated(EnumType.STRING)
     private CarStatus status;
